@@ -2,20 +2,18 @@
 
 This is a python socket server that echos back any http request made to it.
 
-[Demo](https://echo.cdy.io)
-
 ## Example
 Make a custom request:
 ```
 $ curl --header "Favorite-Color: Purple" \
       --data "param1=value1&param2=value2"\
-      http://localhost:3246/hello-mars
+      http://localhost:8080/hello-mars
 ```
 
 Prints:
 ```
-$ python echo.py
-Echoing from http://localhost:3246
+$ python app.py
+Echoing from http://localhost:8080
 127.0.0.1 - Thu Mar 15 23:43:27 2018 - POST /hello-mars HTTP/1.1
 ```
 
@@ -41,11 +39,11 @@ No other dependencies
 
 ## Running
 
-Default port is 3246 (echo on a dialpad)
+Default port is 8080
 
 Python:
 ```
-./echo.py
+./app.py
 ```
 
 **Or:**
@@ -53,13 +51,7 @@ Python:
 Docker:
 ```
 docker build -t echo-server .
-docker run -itp 3246:3246 echo-server
-```
-
-**Or:**
-Dockerhub:
-```
-docker run -itp 3246:3246 cdfuller/echo-server
+docker run -itp 8080:8080 echo-server
 ```
 
 ### Options
@@ -69,16 +61,7 @@ docker run -itp 3246:3246 cdfuller/echo-server
   -v, --verbose         print all requests to terminal
 ```
 
-
 ## References
-* [Let’s Build A Web Server. Part 1](https://ruslanspivak.com/lsbaws-part1/), [Part. 2](https://ruslanspivak.com/lsbaws-part2/), [Part 3](https://ruslanspivak.com/lsbaws-part3/)
-* [HTTP/1.1 RFC2616](https://tools.ietf.org/html/rfc2616)
-* [A Practical Guide to Writing Clients and Servers](http://www.jmarshall.com/easy/http/)
 
-## TODO
-* Figure out how to make it a module so I can do `python -m echo`
-  * Notes:
-    * Works by default.
-    * Would like to figure out how to add it to the python package index
-* Write responses to log file
-* How to add options when using docker to run
+Forked from -> https://github.com/cdfuller/echo-server
+
