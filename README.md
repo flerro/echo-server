@@ -46,12 +46,21 @@ Python:
 ./app.py
 ```
 
-**Or:**
-
 Docker:
 ```
 docker build -t echo-server .
 docker run -itp 8080:8080 echo-server
+```
+
+Openshift
+```
+oc new-app centos/python-35-centos7~https://github.com/flerro/echo-server --name=httpecho
+```
+
+Image build with `s2i`
+
+```
+s2i build https://github.com/flerro/echo-server centos/python-35-centos7 httpecho
 ```
 
 ### Options
