@@ -80,7 +80,7 @@ if __name__ == '__main__':
     from argparse import ArgumentParser
 
     parser = ArgumentParser(description="Server that returns any http request made to it")
-    parser.add_argument('-b', '--bind', default='localhost', help='host to bind to')
+    parser.add_argument('-b', '--bind', default='0.0.0.0', help='host to bind to')
     parser.add_argument('-p', '--port', default=8080, type=int, help='port to listen on')
     parser.add_argument('-v', '--verbose', action='store_true', help='print all requests to terminal')
     parser.add_argument('-q', '--quiet', action='store_true', help='silence all output (overrides --verbose)')
